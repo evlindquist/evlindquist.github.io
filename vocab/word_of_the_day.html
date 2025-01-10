@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <p id="word_of_the_day">This text indicates an error</p>
+
+        <script src="js/vocab.js"></script>
+        <script src="js/dictionary.js"></script>
+
+        <script> 
+            var today_ms = new Date();
+            var jan_one_ms = new Date(today_ms.getFullYear(), 0, 0);
+            var diff_ms = (today_ms - jan_one_ms) + ((today_ms.getTimezoneOffset() - jan_one_ms.getTimezoneOffset()) * 60 * 1000);
+            var one_day_ms = 1000 * 60 * 60 * 24;
+            var day = Math.floor(diff_ms / one_day_ms);
+            var day_index = day % dictionary.length;
+            document.getElementById("word_of_the_day").innerHTML = dictionary[day_index].getString();
+        </script>
+    </body>
+</html>

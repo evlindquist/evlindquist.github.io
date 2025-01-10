@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <p id="random_definition">This text indicates an error</p>
+
+        <script src="js/vocab.js"></script>
+        <script src="js/dictionary.js"></script>
+
+        <script> 
+            random_index = Math.floor(Math.random() * dictionary.length);
+            document.getElementById("random_definition").innerHTML = dictionary[random_index].getString();
+        </script>
+    </body>
+</html>
